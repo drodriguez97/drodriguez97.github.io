@@ -1,0 +1,550 @@
+/*!
+ * Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    overflow-x: hidden;
+    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.text-muted {
+    color: #000000;
+}
+
+.text-primary {
+    color: #000000;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+p.large {
+    font-size: 16px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: 0;
+}
+
+a {
+    color: #000000;
+}
+
+a:hover,
+a:focus,
+a:active,
+a.active {
+    color: #000000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+    font-family: Tahoma,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.img-centered {
+    margin: 0 auto;
+}
+
+.bg-light-gray {
+    background-color: #FFFFFF;
+}
+
+.bg-darkest-gray {
+    background-color: #FFFFFF;
+}
+
+.navbar-default {
+    border-color: transparent;
+    background-color: #fff;
+}
+
+.navbar-default .navbar-brand {
+    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial, cursive;
+    color: #FFFFFF;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:active,
+.navbar-default .navbar-brand.active {
+    color: #000000;
+}
+
+.navbar-brand>img {
+    height: 50px;
+    max-width: 250px;
+    margin: -15px;
+}
+
+@media(min-width:768px) {
+    .navbar-brand>img {
+        height: 50px;
+        max-width: 300px;
+        margin: -15px;
+    }
+}
+
+@media(min-width:992px) {
+    .navbar-brand>img {
+        height: 50px;
+        max-width: 400px;
+        margin: -15px;
+    }
+}
+
+.navbar-default .navbar-collapse {
+    border-color: rgba(255,255,255,.02);
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #000000;
+    background-color: #000000;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #000000;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #000000;
+}
+
+.navbar-default .nav li a {
+    text-transform: uppercase;
+    font-family: Tahoma,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #228B22;
+}
+
+.navbar-default .nav li a:hover,
+.navbar-default .nav li a:focus {
+    outline: 0;
+    color: #A9A9A9;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    border-radius: 0;
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: #A9A9A9;
+    background-color: #000000;
+}
+
+@media(min-width:768px) {
+    .navbar-default {
+        padding: 25px 0;
+        border: 0;
+        background-color: min-gradient;
+        -webkit-transition: padding .3s;
+        -moz-transition: padding .3s;
+        transition: padding .3s;
+    }
+
+    .navbar-default .navbar-brand {
+        font-size: 2em;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+
+    .navbar-default .navbar-nav>.active>a {
+        border-radius: 3px;
+    }
+
+    .navbar-default.navbar-shrink {
+        padding: 10px 0;
+        background-color: #fff;
+    }
+
+    .navbar-default.navbar-shrink .navbar-brand {
+        font-size: 1.5em;
+    }
+}
+
+header {
+    text-align: center;
+    color: #fff;
+    background-attachment: scroll;
+    background-image: url(../img/head.png);
+    background-position: center center;
+    background-repeat: none;
+    backgroun-image: grayscale(100%);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+header .intro-text {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+header .intro-text .intro-lead-in {
+    margin-bottom: 25px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 60px;
+    line-height: 22px;
+}
+
+header .intro-text .intro-heading {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 45px;
+    line-height: 50px;
+}
+
+@media(min-width:768px) {
+    header .intro-text {
+        padding-top: 300px;
+        padding-bottom: 200px;
+    }
+
+    header .intro-text .intro-lead-in {
+        margin-bottom: 25px;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 65px;
+        font-style: italic;
+        font-weight: bolder;
+        line-height: 40px;
+    }
+
+    header .intro-text .intro-heading {
+        margin-bottom: 50px;
+        text-transform: ;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 25px;
+        font-weight:bold;
+        line-height: 75px;
+    }
+}
+
+section {
+    padding: 100px 0;
+}
+
+section h2.section-heading {
+    margin-top: 250px;
+    margin-bottom: 15px;
+    font-size: 50px;
+}
+
+section h3.section-subheading {
+    margin-bottom: 75px;
+    text-transform: none;
+    font-family: "Robot Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    font-style:italic;
+    font-weight: 400;
+}
+
+@media(min-width:768px) {
+    section {
+        padding: 150px 0;
+    }
+}
+
+.service-heading {
+    margin: 15px 0;
+    text-transform: none;
+
+}
+
+
+.timeline {
+    position: center;
+    padding: 0px;
+  list-style: none;
+
+}
+
+.timeline p {
+  font-size: 17px;
+}
+
+
+.timeline>li {
+    position: center;
+    margin-bottom: 0px;
+    min-height: 0px;
+
+}
+
+.timeline img {
+  position: center;
+  margin: 0 auto;
+
+}
+
+.timeline>li .timeline-panel {
+    float: right;
+    position: relative;
+    width: 100%;
+    padding: 30px 0px 50px 30px;
+    text-align: center;
+}
+
+.flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.flexbox-center {
+  justify-content: center;
+}
+
+.team-member {
+    margin-bottom: 50px;
+    text-align:center;
+}
+
+.team-member img {
+    margin: 0 auto;
+    border: 5px solid #fff;
+}
+
+.team-member p {
+    margin-top: 0;
+    text-align:justify;
+    font-size: 17px;
+}
+.team-member h3 {
+    text-transform: none;
+    font-weight: 600;
+    color: #333;
+    font-size: 32px;
+
+}
+
+.team-member h4 {
+    font-size: px;
+    text-transform: none;
+    font-weight: 400;
+    color: #777;
+    margin-bottom: 0px;
+}
+
+.team-member h4 a {
+    text-transform: none;
+}
+
+.team-member h5 {
+    font-size: 14px;
+    text-transform: none;
+    font-style: italic;
+    font-weight: 200;
+    color: #777;
+    margin-bottom: 15px
+}
+
+.team-member .report  {
+    margin-top: 0px;
+}
+
+.team-member h5 a {
+    text-transform: none;
+}
+
+.team-member ul {
+    list-style: none;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    padding: 0;
+}
+
+.team-bio {
+    padding: 0px
+}
+
+@media(min-width:992px) {
+    aside.clients img {
+        margin: 50px auto;
+    }
+}
+
+aside.clients img {
+    margin-top: 50px;
+}
+
+aside .heading {
+    text-transform: none;
+    color: #777;
+    margin-top: 20px;
+    margin-bottom: -40px;
+}
+
+section#contact {
+    background-color: #333;
+    background-image: url(../img/map-image.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+section#contact .section-heading {
+    color: #fff;
+}
+
+section#contact .form-group {
+    margin-bottom: 25px;
+}
+
+section#contact .form-group input,
+section#contact .form-group textarea {
+    padding: 20px;
+}
+
+section#contact .form-group input.form-control {
+    height: auto;
+}
+
+section#contact .form-group textarea.form-control {
+    height: 236px;
+}
+
+section#contact .form-control:focus {
+    border-color: #fed136;
+    box-shadow: none;
+}
+
+section#contact::-webkit-input-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#contact:-moz-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#contact::-moz-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#contact:-ms-input-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#contact .text-danger {
+    color: #e74c3c;
+}
+
+section#contact .text-success {
+    color: #ffffff;
+}
+
+footer {
+    padding: 25px 0;
+    text-align: center;
+}
+
+footer span.copyright {
+    text-transform: uppercase;
+    text-transform: none;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 40px;
+}
+
+footer ul.quicklinks {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-transform: none;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 40px;
+}
+
+ul.social-buttons {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+ul.social-buttons li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    outline: 0;
+    color: #fff;
+    background-color: #222;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:active {
+    background-color: #A9A9A9;
+}
+
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn:active:focus {
+    outline: 0;
+}
+
+
+
+::-moz-selection {
+    text-shadow: none;
+    background: #fed136;
+}
+
+::selection {
+    text-shadow: none;
+    background: #fed136;
+}
+
+img::selection {
+    background: 0 0;
+}
+
+img::-moz-selection {
+    background: 0 0;
+}
+
+body {
+    webkit-tap-highlight-color: #fed136;
+}
