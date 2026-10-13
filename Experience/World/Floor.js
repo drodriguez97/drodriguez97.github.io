@@ -25,41 +25,23 @@ export default class Floor {
 
     setCircles() {
         const geometry = new THREE.CircleGeometry(5, 64);
-        const material = new THREE.MeshStandardMaterial({ color: 0xeffd966 });
-        const material2 = new THREE.MeshStandardMaterial({ color: 0x8395cd });
-        const material3 = new THREE.MeshStandardMaterial({ color: 0x7ad0ac });
+        const make = (color, y, x = 0) => {
+            const circle = new THREE.Mesh(
+                geometry,
+                new THREE.MeshStandardMaterial({ color })
+            );
+            circle.position.set(x, y, 0);
+            circle.scale.set(0, 0, 0);
+            circle.rotation.x = -Math.PI / 2;
+            circle.receiveShadow = true;
+            this.scene.add(circle);
+            return circle;
+        };
 
-        this.circleFirst = new THREE.Mesh(geometry, material);
-        this.circleSecond = new THREE.Mesh(geometry, material2);
-        this.circleThird = new THREE.Mesh(geometry, material3);
-
-        this.circleFirst.position.y = -0.29;
-
-        this.circleSecond.position.y = -0.28;
-        this.circleSecond.position.x = 2;
-
-        this.circleThird.position.y = -0.27;
-
-        this.circleFirst.scale.set(0, 0, 0);
-        this.circleSecond.scale.set(0, 0, 0);
-        this.circleThird.scale.set(0, 0, 0);
-
-        this.circleFirst.rotation.x =
-            this.circleSecond.rotation.x =
-            this.circleThird.rotation.x =
-                -Math.PI / 2;
-
-        this.circleFirst.receiveShadow =
-            this.circleSecond.receiveShadow =
-            this.circleThird.receiveShadow =
-                true;
-
-        this.scene.add(this.circleFirst);
-        this.scene.add(this.circleSecond);
-        this.scene.add(this.circleThird);
+        // One circle per section; each sits just above the previous one
+        this.circleFirst = make(0xffd966, -0.29);
+        this.circleSecond = make(0x8395cd, -0.28, 2);
+        this.circleThird = make(0x7ad0ac, -0.27);
+        this.circleFourth = make(0xf4a261, -0.26, -2);
     }
-
-    resize() {}
-
-    update() {}
 }

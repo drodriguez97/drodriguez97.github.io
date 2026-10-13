@@ -1,28 +1,19 @@
 import * as THREE from "three";
 import { EventEmitter } from "events";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js"; 
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
-import Experience from "../Experience.js";
 
 export default class Resources extends EventEmitter {
     constructor(assets) {
         super();
-        this.experience = new Experience();
-        this.renderer = this.experience.renderer;
-        console.log(this.renderer)
-
         this.assets = assets;
-
         this.items = {};
-        this.queue = this.assets.length;
-        this.loaded = 0;
 
         this.setLoaders();
         this.startLoading();
     }
 
     setLoaders() {
-        this.renderer = this.experience.renderer;
         this.loaders = {};
         this.loaders.gltfLoader = new GLTFLoader();
         this.loaders.dracoLoader = new DRACOLoader();
@@ -31,51 +22,45 @@ export default class Resources extends EventEmitter {
     }
 
     startLoading() {
-        const promises = this.assets.map(asset => {
-            return new Promise(resolve => {
-                if (asset.type === "glbModel") {
-                    this.loaders.gltfLoader.load(asset.path, (file) => {
-                        console.log(file)
-                        resolve({ name: asset.name, file });
-                    });
-                } else if (asset.type === "videoTexture") {
-                    resolve({ name: asset.name, file: this.loadVideoTexture(asset) });
-                }
-            });
+        const promises = this.assets.map((asset) => {
+            if (asset.type === "glbModel") {
+                return this.loaders.gltfLoader
+                    .loadAsync(asset.path)
+                    .then((file) => [asset.name, file]);
+            }
+            if (asset.type === "videoTexture") {
+                return [asset.name, this.loadVideoTexture(asset)];
+            }
+            return Promise.reject(new Error(`Unknown asset type: ${asset.type}`));
         });
 
-        Promise.all(promises).then(loadedAssets => {
-            loadedAssets.forEach(({ name, file }) => {
-                this.singleAssetLoaded({ name, file });
+        Promise.all(promises)
+            .then((loaded) => {
+                this.items = Object.fromEntries(loaded);
+                this.loaders.dracoLoader.dispose();
+                this.emit("ready");
+            })
+            .catch((error) => {
+                console.error("Failed to load 3D assets", error);
+                this.emit("error", error);
             });
-        });
     }
-        
+
     loadVideoTexture(asset) {
         const video = document.createElement("video");
         video.src = asset.path;
         video.muted = true;
         video.playsInline = true;
-        video.autoplay = true;
         video.loop = true;
-        video.play();
+        video.play().catch(() => {});
 
         const videoTexture = new THREE.VideoTexture(video);
         videoTexture.flipY = false;
-        videoTexture.minFilter = THREE.NearestFilter;
-        videoTexture.magFilter = THREE.NearestFilter;
+        videoTexture.minFilter = THREE.LinearFilter;
+        videoTexture.magFilter = THREE.LinearFilter;
         videoTexture.generateMipmaps = false;
         videoTexture.encoding = THREE.sRGBEncoding;
 
         return videoTexture;
-    }
-
-    singleAssetLoaded(asset) {
-        this.items[asset.name] = asset.file;
-        this.loaded++;
-        
-        if (this.loaded === this.queue) {
-            this.emit("ready");
-        }
     }
 }

@@ -1,82 +1,50 @@
-import { EventEmitter } from "events";
-import Experience from "./Experience";
-import GSAP from 'gsap';
+import Experience from "./Experience.js";
+import GSAP from "gsap";
 
-export default class Preloader extends EventEmitter {
+export default class Preloader {
     constructor() {
-        super();
         this.experience = new Experience();
-        this.scene = this.experience.scene;
-        this.sizes = this.experience.sizes;
-        this.resources = this.experience.resources;
-        this.camera = this.experience.camera;
         this.world = this.experience.world;
+        this.resources = this.experience.resources;
+        this.arrow = document.querySelector(".arrow-svg-wrapper");
 
-        this.world.on("worldready", () => {
-            this.playIntro();
+        this.world.on("worldready", () => this.playIntro());
+        // Never leave visitors stuck behind the loader if the model fails
+        this.resources.on("error", () => this.playIntro());
+
+        window.addEventListener("scroll", () => this.updateArrow(), {
+            passive: true,
         });
-
-        window.addEventListener('scroll', this.handleScroll.bind(this));
-
-        this.scrollTimeout = null;
     }
 
-    handleScroll() {
-
-        // If timeout is active, clear it and mark it as inactive
-        if (this.isTimeoutActive) {
-            clearTimeout(this.scrollTimeout);
-            this.isTimeoutActive = false;
-        }
-
-        // Set timeout to hide the arrow after 3 seconds of not scrolling
-        this.scrollTimeout = setTimeout(() => {
-            this.hideArrow();
-            this.isTimeoutActive = false; // Reset the flag after hiding the arrow
-        }, 3000);
+    updateArrow() {
+        if (!this.introDone) return;
+        this.arrow.style.opacity = window.scrollY > 50 ? 0 : 1;
     }
 
-    showArrow() {
-        document.querySelector('.arrow-svg-wrapper').style.opacity = 1;
-    }
+    playIntro() {
+        if (this.introStarted) return;
+        this.introStarted = true;
 
-    hideArrow() {
-        document.querySelector('.arrow-svg-wrapper').style.opacity = 0;
-    }
-
-    firstIntro() {
-        return new Promise((resolve) => {
-            this.timeline = new GSAP.timeline();
-            this.timeline.set(".animatedis", { y: 0, yPercent: 100 });
-            this.timeline.to(".preloader", {
+        GSAP.timeline()
+            .to(".preloader", {
                 opacity: 0,
-                delay: 1,
+                delay: 0.3,
                 onComplete: () => {
-                    document
-                        .querySelector(".preloader")
-                        .classList.add("hidden");
+                    document.querySelector(".preloader").classList.add("hidden");
                 },
-            }); 
-            this.timeline
-                .to(
-                    ".arrow-svg-wrapper",
-                    {
-                        opacity: 1,
+            })
+            .to(".toggle-bar", { opacity: 1 }, "same")
+            .to(
+                this.arrow,
+                {
+                    opacity: window.scrollY > 50 ? 0 : 1,
+                    onComplete: () => {
+                        this.introDone = true;
+                        this.arrow.style.transition = "opacity 0.3s";
                     },
-                    "same"
-                )
-                .to(
-                    ".toggle-bar",
-                    {
-                        opacity: 1,
-                        onComplete: resolve,
-                    },
-                    "same"
-                );
-        });
-    }
-
-    async playIntro() {
-        await this.firstIntro();
+                },
+                "same"
+            );
     }
 }

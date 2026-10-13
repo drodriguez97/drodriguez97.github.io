@@ -15,7 +15,9 @@ export default class Renderer {
     setRenderer() {
         this.renderer = new THREE.WebGLRenderer({
             canvas: this.canvas,
-            antialias: true,
+            // MSAA is costly on high-DPI screens, where it is barely visible anyway
+            antialias: this.sizes.pixelRatio < 2,
+            powerPreference: "high-performance",
         });
 
         this.renderer.physicallyCorrectLights = true;
@@ -34,26 +36,6 @@ export default class Renderer {
     }
 
     update() {
-        // this.renderer.setViewport(0, 0, this.sizes.width, this.sizes.height);
         this.renderer.render(this.scene, this.camera.orthographicCamera);
-        // Second Screen
-        // this.renderer.setScissorTest(true);
-        // this.renderer.setViewport(
-        //     this.sizes.width - this.sizes.width / 3,
-        //     this.sizes.height - this.sizes.height / 3,
-        //     this.sizes.width / 3,
-        //     this.sizes.height / 3
-        // );
-
-        // this.renderer.setScissor(
-        //     this.sizes.width - this.sizes.width / 3,
-        //     this.sizes.height - this.sizes.height / 3,
-        //     this.sizes.width / 3,
-        //     this.sizes.height / 3
-        // );
-
-        // this.renderer.render(this.scene, this.camera.perspectiveCamera);
-
-        // this.renderer.setScissorTest(false);
     }
 }

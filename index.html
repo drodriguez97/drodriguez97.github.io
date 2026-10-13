@@ -2,155 +2,213 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" type="image/png" href="source.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daniel Josue Rodriguez</title>
+    <title>Daniel Josue Rodriguez | Software QA Engineer</title>
+    <meta name="description" content="Daniel Josue Rodriguez, Software QA Engineer building UI and API test automation in C#, Python, Playwright and Selenium." />
+    <meta property="og:title" content="Daniel Josue Rodriguez | Software QA Engineer" />
+    <meta property="og:description" content="QA engineer with 3+ years testing surgical and defense software." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://djrcoding.com" />
+    <link rel="icon" type="image/png" href="/source.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" />
+    <link rel="preload" href="/models/Final/Final.gltf" as="fetch" crossorigin />
   </head>
   <body class="light-theme">
-    <div class="experience">
+    <script>
+      // Apply the saved/preferred theme before first paint to avoid a flash
+      try {
+        var t = localStorage.getItem("theme") ||
+          (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.body.className = t + "-theme";
+      } catch (e) {}
+    </script>
+    <div class="experience" aria-hidden="true">
       <canvas class="experience-canvas"></canvas>
     </div>
 
-    <div class="page" asscroll-container>
-
-      <div class="toggle-bar">
-        <div class="sun-wrapper">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M11 5V1h2v4Zm6.65 2.75-1.375-1.375 2.8-2.875 1.4 1.425ZM19 13v-2h4v2Zm-8 10v-4h2v4ZM6.35 7.7 3.5 4.925l1.425-1.4L7.75 6.35Zm12.7 12.8-2.775-2.875 1.35-1.35 2.85 2.75ZM1 13v-2h4v2Zm3.925 7.5-1.4-1.425 2.8-2.8.725.675.725.7ZM12 18q-2.5 0-4.25-1.75T6 12q0-2.5 1.75-4.25T12 6q2.5 0 4.25 1.75T18 12q0 2.5-1.75 4.25T12 18Zm0-2q1.65 0 2.825-1.175Q16 13.65 16 12q0-1.65-1.175-2.825Q13.65 8 12 8q-1.65 0-2.825 1.175Q8 10.35 8 12q0 1.65 1.175 2.825Q10.35 16 12 16Zm0-4Z"/></svg>
-          </div>
-
-          <button class="toggle-button">          
-            <div class="toggle-circle"></div>
-          </button>
-          
-        <div class="moon-wrapper">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M12 21q-3.75 0-6.375-2.625T3 12q0-3.75 2.625-6.375T12 3q.35 0 .688.025.337.025.662.075-1.025.725-1.637 1.887Q11.1 6.15 11.1 7.5q0 2.25 1.575 3.825Q14.25 12.9 16.5 12.9q1.375 0 2.525-.613 1.15-.612 1.875-1.637.05.325.075.662Q21 11.65 21 12q0 3.75-2.625 6.375T12 21Zm0-2q2.2 0 3.95-1.212 1.75-1.213 2.55-3.163-.5.125-1 .2-.5.075-1 .075-3.075 0-5.238-2.162Q9.1 10.575 9.1 7.5q0-.5.075-1t.2-1q-1.95.8-3.162 2.55Q5 9.8 5 12q0 2.9 2.05 4.95Q9.1 19 12 19Zm-.25-6.75Z"/></svg>
-        </div>
-      </div>
-
-      <!-- Preloader -->
-      <div class="preloader">
-        <div class="preloader-wrapper">
-          <div class="loading"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-        </div>
-      </div>
-
-      <div class="arrow-svg-wrapper">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path color="currentColor" d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-      </div>
-
-      <div class="page-wrapper" asscroll>
-        <section class="hero">
-          <div class="hero-wrapper">
-            <div class="hero-main">
-              <h1 class="hero-main-title">Daniel J Rodriguez</h1>
-              <p class="hero-main-description"> Cal Poly Pomona Alumni | B.S. in Computer Science | Aspiring Software Engineer</p>
-            </div>
-
-            <div class="hero-second">
-              <p class="hero-second-subheading">Daniel Rodriguez</p>
-              <p class="hero-second-subheading">Portfolio</p>
-            </div>
-
-          </div>
-        </section>
-
-        <div class="first-move section-margin"></div>
-
-        <section class="first-section section left">
-          <div class="progress-wrapper progress-bar-wrapper-left">
-            <div class="progress-bar"></div>
-          </div>
-
-          <div class="section-intro-wrapper">
-            <h1 class="section-title">
-              <span class="section-title-text">About Me</span>
-              <div class="section-title-decoration styleOne"></div>
-              <div class="section-title-decoration styleTwo"></div>
-              <div class="section-title-decoration styleThree"></div>
-            </h1>
-            <span class="section-number">01</span>
-          </div>
-
-          <div class="section-detail-wrapper">
-            <h3 class="section-heading">Hey there! 👋</h3>
-            <p class="section-text">I'm Daniel Rodriguez, a recent Computer Science graduate from Cal Poly Pomona. Currently, I'm a Software Test Engineer at Space Dynamic Laboratory, with aspirations to transition into roles like Full Stack Developer or Software Engineer.</p>
-            <p class="section-text">In my downtime you'll find me exploring good eats. From savoring a comforting bowl of Pho, indulging in fresh sushi, drinking a strong cup of coffee, or eating a delicious burger. I'm all about the diverse flavors life has to offer.</p>
-            <h3 class="section-heading">What I'm Into</h3>
-            <p class="section-text">I thrive in outdoor activities, whether it's going on scenic hikes, carving the slopes while snowboarding, or maintaining an active lifestyle through regular workouts at the gym.</p>
-            <p class="section-text">And when I'm not out and about, I'm immersed in the world of gaming, with a particular passion for video games. I also enjoy unwinding with a good movie or diving into the intricate world of mechanical keyboards. I find joy in both creation and exploration.</p>
-            <p class="section-text">My top three movies are Star Wars, Dune, and Blade Runner 2049.</p>
-          </div>
-        </section>
-
-        <div class="second-move section-margin"></div>
-
-        <section class="second-section section right">
-          <div class="progress-wrapper progress-bar-wrapper-right">
-            <div class="progress-bar blue-background"></div>
-          </div>
-
-          <div class="section-intro-wrapper">
-            <h1 class="section-title">
-              <span class="section-title-text">Projects</span>
-              <div class="section-title-decoration styleOne"></div>
-              <div class="section-title-decoration styleTwo"></div>
-              <div class="section-title-decoration styleThree"></div>
-            </h1>
-            <span class="section-number">02</span>
-          </div>
-
-          <div class="section-detail-wrapper">
-            <h3 class="section-heading"><span class="underline">Weekly Mobile App</span></h3>
-            <p class="section-text">
-              Utilizing Kotlin, Jetpack Compose, and Android Studios, I contributed to the development of Weekly's mobile app frontend for an entire semester. Collaborating closely with the frontend team, we embraced agile methodologies such as weekly sprints, Trello boards, and Figma to ensure seamless project execution and alignment with our vision.
-            </p>
-            <h3 class="section-heading"><span class="underline">Trapped In Space</span></h3>
-            <p class="section-text">
-              Embark on a thrilling journey through our 2D Action Platformer, Trapped In Space, where players must navigate through a hostile spacecraft infested with menacing extraterrestrial creatures. Employing weekly sprint cycles, our team meticulously crafted an immersive experience while maintaining project scope and delivering on our objectives.
-            </p>
-            <h3 class="section-heading"><span class="underline">Cafe Picker App</span></h3>
-            <p class="section-text">
-              Delve into the world of coffee culture with the Cafe Picker App, powered by the Yelp API and built using Flask and React.The app offers users the delightful convenience of discovering nearby cafes with just a tap.
-            </p>
-          </div>
-        </section>
-
-        <div class="third-move section-margin"></div>
-
-        <section class="third-section section left">
-          <div class="progress-wrapper progress-bar-wrapper-left">
-            <div class="progress-bar green-background"></div>
-          </div>
-
-          <div class="section-intro-wrapper">
-            <h1 class="section-title">
-              <span class="section-title-text">Get in Touch</span>
-              <div class="section-title-decoration styleOne"></div>
-              <div class="section-title-decoration styleTwo"></div>
-              <div class="section-title-decoration styleThree"></div>
-            </h1>
-            <span class="section-number">03</span>
-          </div>
-
-          <div class="section-detail-wrapper">
-            <h3 class="section-heading">Connect With Me!</h3>
-            <p class="section-text">Thank you for visiting my site! </p>
-            <p class="section-text">
-              Feel free to connect with me on
-              <a href="https://www.linkedin.com/in/daniel-rodriguez-5ab034245" target="_blank">LinkedIn</a>,
-              follow my projects on
-              <a href="https://github.com/drodriguez97" target="_blank">GitHub</a>,
-              or send me an email at
-              <a href="mailto:drod101997@gmail.com">drod101997@gmail.com</a>.
-            </p>
-          </div>
-        </section>
+    <div class="preloader">
+      <div class="preloader-wrapper" role="status" aria-label="Loading">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
       </div>
     </div>
+
+    <div class="toggle-bar">
+      <div class="sun-wrapper" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M11 5V1h2v4Zm6.65 2.75-1.375-1.375 2.8-2.875 1.4 1.425ZM19 13v-2h4v2Zm-8 10v-4h2v4ZM6.35 7.7 3.5 4.925l1.425-1.4L7.75 6.35Zm12.7 12.8-2.775-2.875 1.35-1.35 2.85 2.75ZM1 13v-2h4v2Zm3.925 7.5-1.4-1.425 2.8-2.8.725.675.725.7ZM12 18q-2.5 0-4.25-1.75T6 12q0-2.5 1.75-4.25T12 6q2.5 0 4.25 1.75T18 12q0 2.5-1.75 4.25T12 18Zm0-2q1.65 0 2.825-1.175Q16 13.65 16 12q0-1.65-1.175-2.825Q13.65 8 12 8q-1.65 0-2.825 1.175Q8 10.35 8 12q0 1.65 1.175 2.825Q10.35 16 12 16Zm0-4Z"/></svg>
+      </div>
+      <button class="toggle-button" type="button" aria-label="Dark mode" aria-pressed="false">
+        <span class="toggle-circle"></span>
+      </button>
+      <div class="moon-wrapper" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M12 21q-3.75 0-6.375-2.625T3 12q0-3.75 2.625-6.375T12 3q.35 0 .688.025.337.025.662.075-1.025.725-1.637 1.887Q11.1 6.15 11.1 7.5q0 2.25 1.575 3.825Q14.25 12.9 16.5 12.9q1.375 0 2.525-.613 1.15-.612 1.875-1.637.05.325.075.662Q21 11.65 21 12q0 3.75-2.625 6.375T12 21Zm0-2q2.2 0 3.95-1.212 1.75-1.213 2.55-3.163-.5.125-1 .2-.5.075-1 .075-3.075 0-5.238-2.162Q9.1 10.575 9.1 7.5q0-.5.075-1t.2-1q-1.95.8-3.162 2.55Q5 9.8 5 12q0 2.9 2.05 4.95Q9.1 19 12 19Zm-.25-6.75Z"/></svg>
+      </div>
+    </div>
+
+    <div class="arrow-svg-wrapper" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="currentColor" d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+    </div>
+
+    <main class="page">
+      <section class="hero">
+        <div class="hero-wrapper">
+          <div class="hero-main">
+            <h1 class="hero-main-title">Daniel J Rodriguez</h1>
+            <p class="hero-main-description">Software QA Engineer · UI &amp; API test automation in C#, Python and Playwright</p>
+          </div>
+
+          <div class="hero-second">
+            <p class="hero-second-subheading">Software QA</p>
+            <p class="hero-second-subheading">Engineer</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="first-move section-margin"></div>
+
+      <section class="first-section section left" id="about">
+        <div class="progress-wrapper progress-bar-wrapper-left">
+          <div class="progress-bar"></div>
+        </div>
+
+        <div class="section-intro-wrapper">
+          <h2 class="section-title">
+            <span class="section-title-text">About Me</span>
+            <span class="section-title-decoration styleOne"></span>
+            <span class="section-title-decoration styleTwo"></span>
+            <span class="section-title-decoration styleThree"></span>
+          </h2>
+          <span class="section-number">01</span>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading">Hey there! 👋</h3>
+          <p class="section-text">I'm Daniel Rodriguez, a QA engineer with 3+ years of experience testing surgical and defense software. I'm currently a Software QA Engineer at Arthrex, where I build UI and API test automation and internal tools that give engineering and product leads hard data on performance, hardware sizing and field setup.</p>
+          <p class="section-text">I earned my B.S. in Computer Science from Cal Poly Pomona in 2023.</p>
+
+          <h3 class="section-heading">Skills</h3>
+          <ul class="skill-list">
+            <li><strong>Languages:</strong> C#, Python, JavaScript, SQL</li>
+            <li><strong>Automation:</strong> Playwright, Selenium WebDriver, TestComplete, Cypress, Postman</li>
+            <li><strong>Testing:</strong> UI &amp; API performance, end-to-end, regression, system integration</li>
+            <li><strong>Systems:</strong> Linux, SSH, networking, Docker, VMware</li>
+            <li><strong>Tools:</strong> Jenkins, Git, Jira, Confluence, .NET, REST APIs, PostgreSQL</li>
+          </ul>
+
+          <h3 class="section-heading">Outside of Work</h3>
+          <p class="section-text">You'll find me hiking, snowboarding, at the gym, or hunting down a good bowl of pho, fresh sushi or a strong cup of coffee. I'm also into video games, movies and mechanical keyboards. My top three movies are Star Wars, Dune and Blade Runner 2049.</p>
+        </div>
+      </section>
+
+      <div class="second-move section-margin"></div>
+
+      <section class="second-section section right" id="experience">
+        <div class="progress-wrapper progress-bar-wrapper-right">
+          <div class="progress-bar blue-background"></div>
+        </div>
+
+        <div class="section-intro-wrapper">
+          <h2 class="section-title">
+            <span class="section-title-text">Experience</span>
+            <span class="section-title-decoration styleOne"></span>
+            <span class="section-title-decoration styleTwo"></span>
+            <span class="section-title-decoration styleThree"></span>
+          </h2>
+          <span class="section-number">02</span>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading">Software QA Engineer I · Arthrex</h3>
+          <p class="section-meta">June 2025 – Present</p>
+          <ul class="section-list">
+            <li>Verified and shipped three releases of surgical OR integration software: Matrix G2 1.6, Matrix G2 2.0 and OR Command 1.2.</li>
+            <li>Built a Matrix G2 performance test tool that runs 100+ API-backed actions across the UI and reports render and API response times.</li>
+            <li>Built an OR Command server capacity calculator that the lead engineer and PM use to set hardware recommendations.</li>
+            <li>Developed a facility management tool used by the whole Matrix G2 team to SSH into systems, collect logs, check device health and configure networking.</li>
+          </ul>
+
+          <h3 class="section-heading">Software Test Engineer · Innovative Defense Technologies</h3>
+          <p class="section-meta">January 2025 – June 2025 · Los Angeles, CA</p>
+          <ul class="section-list">
+            <li>Expanded automated coverage for JMPS with ATRT, enabling tests for 4+ new mission-critical capabilities.</li>
+            <li>Wrote and ran 20+ automated test cases for NOMS in TestComplete and Python using the Page Object Model.</li>
+          </ul>
+
+          <h3 class="section-heading">Software Test Engineer · Space Dynamics Laboratory</h3>
+          <p class="section-meta">June 2023 – November 2024 · Logan, UT</p>
+          <ul class="section-list">
+            <li>Built 40+ C# Selenium WebDriver tests, reaching 90% automated coverage of critical features in a mission control web app.</li>
+            <li>Led QA for a new service release and found and resolved an average of 15 defects per sprint.</li>
+            <li>Authored 15+ test plans covering 100% of customer-specified requirements.</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="third-move section-margin"></div>
+
+      <section class="third-section section left" id="projects">
+        <div class="progress-wrapper progress-bar-wrapper-left">
+          <div class="progress-bar green-background"></div>
+        </div>
+
+        <div class="section-intro-wrapper">
+          <h2 class="section-title">
+            <span class="section-title-text">Projects</span>
+            <span class="section-title-decoration styleOne"></span>
+            <span class="section-title-decoration styleTwo"></span>
+            <span class="section-title-decoration styleThree"></span>
+          </h2>
+          <span class="section-number">03</span>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading">Weekly Mobile App</h3>
+          <p class="section-meta">Kotlin · Jetpack Compose · Android Studio</p>
+          <p class="section-text">Built frontend features for Weekly's Android app over a full semester, working in weekly sprints with Trello and Figma alongside the frontend team.</p>
+
+          <h3 class="section-heading">Trapped In Space</h3>
+          <p class="section-meta">2D action platformer</p>
+          <p class="section-text">A team-built platformer where players fight their way through a spacecraft overrun by alien creatures, delivered in weekly sprint cycles.</p>
+
+          <h3 class="section-heading">Cafe Picker</h3>
+          <p class="section-meta">Flask · React · Yelp API</p>
+          <p class="section-text">A web app that finds nearby cafes with a single tap using the Yelp API.</p>
+
+          <p class="section-text">More of my work is on <a href="https://github.com/drodriguez97" target="_blank" rel="noopener">GitHub</a>.</p>
+        </div>
+      </section>
+
+      <div class="fourth-move section-margin"></div>
+
+      <section class="fourth-section section right" id="contact">
+        <div class="progress-wrapper progress-bar-wrapper-right">
+          <div class="progress-bar orange-background"></div>
+        </div>
+
+        <div class="section-intro-wrapper">
+          <h2 class="section-title">
+            <span class="section-title-text">Get in Touch</span>
+            <span class="section-title-decoration styleOne"></span>
+            <span class="section-title-decoration styleTwo"></span>
+            <span class="section-title-decoration styleThree"></span>
+          </h2>
+          <span class="section-number">04</span>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading">Connect With Me!</h3>
+          <p class="section-text">Thanks for visiting! The best ways to reach me:</p>
+          <ul class="contact-list">
+            <li><a href="mailto:drod101997@gmail.com">drod101997@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/daniel-rodriguez-5ab034245" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/drodriguez97" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
