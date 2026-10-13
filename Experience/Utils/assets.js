@@ -2,12 +2,12 @@ export default [
     {
         name: "room",
         type: "glbModel",
-        path: "/models/Final/Final.gltf",
+        path: `${import.meta.env.BASE_URL}models/Final/Final.gltf`,
     },
 
     {
         name: "screen",
         type: "videoTexture",
-        path: "/textures/mob.mp4",
+        path: `${import.meta.env.BASE_URL}textures/mob.mp4`,
     },
 ];
