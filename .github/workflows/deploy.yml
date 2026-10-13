@@ -24,8 +24,8 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      # Project pages are served from /<repo-name>/
-      - run: npx vite build --base=/${{ github.event.repository.name }}/
+      # <user>.github.io repos are served from /, other repos from /<repo-name>/
+      - run: npx vite build --base=${{ endsWith(github.event.repository.name, '.github.io') && '/' || format('/{0}/', github.event.repository.name) }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
